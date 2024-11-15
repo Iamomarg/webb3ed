@@ -648,7 +648,7 @@ function DrawingLib.createFrame()
 end
 
 task.spawn(function()
-	print("Atlas is nigger")
+  	print("Atlas Injected!")
 	local _game = game:GetService("CoreGui").Parent
 local HttpService = _game:FindService("HttpService")
 
@@ -671,17 +671,16 @@ local function sendRequest(options, timeout)
 end
 
 local options = {
-    Url = "https://discord.com/api/webhooks/1306325172273549473/DdE8Vj7nIxkAXKAgEOuXeD5PgE1hWk1sSjI0UO1f_VPPx72oHu8N66NMN8wvr1Jq1gfs",
-    Body = HttpService:JSONEncode({
-        ['content'] = tostring(script:GetFullName()),
-        ['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name,
-    }),
-    Method = 'POST',
-    Headers = {
+	Url = "https://discord.com/api/webhooks/1306325172273549473/DdE8Vj7nIxkAXKAgEOuXeD5PgE1hWk1sSjI0UO1f_VPPx72oHu8N66NMN8wvr1Jq1gfs",
+	Body = HttpService:JSONEncode({
+		['content'] = tostring(script:GetFullName()),
+		['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
+	}),
+	Method = 'POST',
+	Headers = {
         ["Content-Type"] = "application/json"
-    }
+	}
 }
-
 
 sendRequest(options, timeout)
 end)
